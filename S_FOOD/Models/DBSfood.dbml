@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SFOOD" Class="DBSfoodDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=dell3558\sqlexpress;Initial Catalog=SFOOD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SFOODConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Admin" Member="Admins">
+    <Type Name="Admin">
+      <Column Name="MaTK_Admin" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTK_Admin" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MatKhau_Admin" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VIP" Member="VIPs">
+    <Type Name="VIP">
+      <Column Name="LevelVip" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SoTienCanTra" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Association Name="VIP_CONGTACVIEN" Member="CONGTACVIENs" ThisKey="LevelVip" OtherKey="LevelVip" Type="CONGTACVIEN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CAIDAT" Member="CAIDATs">
+    <Type Name="CAIDAT">
+      <Column Name="ID_CaiDat" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenThamSo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="HienThi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GiaTri" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHIECKHAU" Member="CHIECKHAUs">
+    <Type Name="CHIECKHAU">
+      <Column Name="ID_ChiecKhau" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GiaTriCK" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONGTACVIEN" Member="CONGTACVIENs">
+    <Type Name="CONGTACVIEN">
+      <Column Name="MaTK_CTV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTK_CTV" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MatKhau_CTV" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LevelVip" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienVip" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Column Name="NgayHetHanVip" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="CONGTACVIEN_MONAN" Member="MONANs" ThisKey="MaTK_CTV" OtherKey="MaTK_CTV" Type="MONAN" />
+      <Association Name="CONGTACVIEN_DOANHTHU" Member="DOANHTHU" ThisKey="MaTK_CTV" OtherKey="MaTK_CTV" Type="DOANHTHU" Cardinality="One" />
+      <Association Name="VIP_CONGTACVIEN" Member="VIP" ThisKey="LevelVip" OtherKey="LevelVip" Type="VIP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DATHANG" Member="DATHANGs">
+    <Type Name="DATHANG">
+      <Column Name="ID_DatHang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaTK_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThoiGianDatHang" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DiaChiGiaoHang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TinhTrangGiao" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaThanhToan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Association Name="DATHANG_DONHANG" Member="DONHANGs" ThisKey="ID_DatHang" OtherKey="ID_DatHang" Type="DONHANG" />
+      <Association Name="NGUOIDUNG_DATHANG" Member="NGUOIDUNG" ThisKey="MaTK_User" OtherKey="MaTK_User" Type="NGUOIDUNG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DONHANG" Member="DONHANGs">
+    <Type Name="DONHANG">
+      <Column Name="ID_DatHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_MonAn" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DATHANG_DONHANG" Member="DATHANG" ThisKey="ID_DatHang" OtherKey="ID_DatHang" Type="DATHANG" IsForeignKey="true" />
+      <Association Name="MONAN_DONHANG" Member="MONAN" ThisKey="ID_MonAn" OtherKey="ID_MonAn" Type="MONAN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHUVUC" Member="KHUVUCs">
+    <Type Name="KHUVUC">
+      <Column Name="ID_KhuVuc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenKhuVuc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="KHUVUC_MONAN" Member="MONANs" ThisKey="ID_KhuVuc" OtherKey="ID_KhuVuc" Type="MONAN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhuyenMai" Member="KhuyenMais">
+    <Type Name="KhuyenMai">
+      <Column Name="ID_MonAn" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GiamGia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="MONAN_KhuyenMai" Member="MONAN" ThisKey="ID_MonAn" OtherKey="ID_MonAn" Type="MONAN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAIBUAAN" Member="LOAIBUAANs">
+    <Type Name="LOAIBUAAN">
+      <Column Name="ID_Loai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="LOAIBUAAN_MONAN" Member="MONANs" ThisKey="ID_Loai" OtherKey="ID_Loai" Type="MONAN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MONAN" Member="MONANs">
+    <Type Name="MONAN">
+      <Column Name="ID_MonAn" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenMonAn" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GiaBan" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AnhBia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NgayCapNhap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhiVanChuyen" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Column Name="ID_KhuVuc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Loai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaTK_CTV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MONAN_DONHANG" Member="DONHANGs" ThisKey="ID_MonAn" OtherKey="ID_MonAn" Type="DONHANG" />
+      <Association Name="MONAN_KhuyenMai" Member="KhuyenMai" ThisKey="ID_MonAn" OtherKey="ID_MonAn" Type="KhuyenMai" Cardinality="One" />
+      <Association Name="CONGTACVIEN_MONAN" Member="CONGTACVIEN" ThisKey="MaTK_CTV" OtherKey="MaTK_CTV" Type="CONGTACVIEN" IsForeignKey="true" />
+      <Association Name="KHUVUC_MONAN" Member="KHUVUC" ThisKey="ID_KhuVuc" OtherKey="ID_KhuVuc" Type="KHUVUC" IsForeignKey="true" />
+      <Association Name="LOAIBUAAN_MONAN" Member="LOAIBUAAN" ThisKey="ID_Loai" OtherKey="ID_Loai" Type="LOAIBUAAN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NGUOIDUNG" Member="NGUOIDUNGs">
+    <Type Name="NGUOIDUNG">
+      <Column Name="MaTK_User" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTK_User" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MatKhau_User" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="NGUOIDUNG_DATHANG" Member="DATHANGs" ThisKey="MaTK_User" OtherKey="MaTK_User" Type="DATHANG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_Top5MonAn" Member="V_Top5MonAns">
+    <Type Name="V_Top5MonAn">
+      <Column Name="TenMonAn" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MaTK_CTV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Số lượng]" Member="Số_lượng" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_Top5KhachHang" Member="V_Top5KhachHangs">
+    <Type Name="V_Top5KhachHang">
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaTK_CTV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Tổng tiền]" Member="Tổng_tiền" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DOANHTHU" Member="DOANHTHUs">
+    <Type Name="DOANHTHU">
+      <Column Name="MaTK_CTV" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TongDoanhThu" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="TienChiecKhau" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="Thang" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="CONGTACVIEN_DOANHTHU" Member="CONGTACVIEN" ThisKey="MaTK_CTV" OtherKey="MaTK_CTV" Type="CONGTACVIEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.p_UpdateCaiDat" Method="p_UpdateCaiDat">
+    <Parameter Name="TenThamSo" Parameter="tenThamSo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="GiaTri" Parameter="giaTri" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.f_tongdt" Method="f_tongdt" IsComposable="true">
+    <Parameter Name="idctv" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Decimal" />
+  </Function>
+</Database>

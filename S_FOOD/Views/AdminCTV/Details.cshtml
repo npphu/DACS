@@ -1,0 +1,83 @@
+﻿@model S_FOOD.Models.CONGTACVIEN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div>
+    <h4 class="center">THÔNG TIN CHI TIẾT CỘNG TÁC VIÊN <a style="color:red">@Model.HoTen</a> </h4>
+    
+    <table class="table table-bordered table-striped table-hover" style="font-size:14px">
+        <tr>
+            <th>Mã tài khoản</th>
+            <td>@Model.MaTK_CTV</td>
+        </tr>
+
+        <tr>
+            <th>Tên tài khoản</th>
+            <td>@Model.TenTK_CTV</td>
+        </tr>
+
+        <tr>
+            <th>Mật khẩu</th>
+            <td>@Model.MatKhau_CTV</td>
+        </tr>
+
+        <tr>
+            <th>Họ tên</th>
+            <td>@Model.HoTen</td>
+        </tr>
+
+        <tr>
+            <th>CMND</th>
+            <td>@Model.CMND</td>
+        </tr>
+
+        <tr>
+            <th>Email</th>
+            <td ">@Model.Email</td>
+        </tr>
+
+        <tr>
+            <th>Địa chỉ</th>
+            <td>@Model.DiaChi</td>
+        </tr>
+
+        <tr>
+            <th>Điện thoại</th>
+            <td>@Model.DienThoai</td>
+        </tr>
+
+        <tr>
+            <th>Ngày sinh</th>
+            <td>@String.Format("{0:dd/MM/yyyy}", Model.NgaySinh)</td>
+        </tr>
+
+        <tr>
+            <th>Giới tính</th>
+            <td>@Model.GioiTinh</td>
+        </tr>
+
+        <tr>
+            <th>Level Quảng cáo</th>
+            <td>@Model.LevelVip</td>
+        </tr>
+
+        <tr>
+            <th>Tiền quảng cáo</th>
+            <td>@Model.VIP.SoTienCanTra</td>
+        </tr>
+
+        <tr>
+            <th>Ngày hết hạn quảng cáo</th>
+            <td>@String.Format("{0:dd/MM/yyyy}", Model.NgayHetHanVip)</td>
+        </tr>
+
+    </table>
+
+</div>
+<p class="center">
+    <button class="btn btn-success">@Html.ActionLink("Sửa", "Edit", new { id = Model.MaTK_CTV })</button>
+    <button class="btn btn-primary">@Html.ActionLink("Về trang chủ", "Index")</button> 
+</p>

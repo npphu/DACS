@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCTV.cshtml";
+}
+
+@model IEnumerable<S_FOOD.Models.DOANHTHU>
+<h3 class="center">TỔNG DOANH THU THÁNG @DateTime.Now.Month/@DateTime.Now.Year</h3>
+<table class="table table-bordered table-hover table-striped" style="vertical-align:middle; font-size:14px">
+    <thead style="background-color:orange">
+        <tr>
+           
+            <th class="center">
+                Tên ctv
+            </th>
+            <th class="center">
+                Tổng doanh thu
+            </th>          
+            <th class="center">
+                Tiền chiếc khấu
+            </th>
+            <th class="center">
+                Tháng
+            </th>
+            <th class="center">
+                Tùy chọn
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+    <tr class="center">        
+        <td style="vertical-align:middle" class="center">
+            @Html.DisplayFor(modelItem => item.CONGTACVIEN.HoTen)
+        </td>
+        <td style="vertical-align:middle" class="center">
+            @String.Format("{0:0,00}", item.TongDoanhThu) VNĐ
+        </td>        
+        <td style="vertical-align:middle" class="center">
+            @String.Format("{0:0,00}", item.TienChiecKhau) VNĐ
+        </td>
+        <td style="vertical-align:middle" class="center">
+            @String.Format("{0:MM/yyyy}", item.Thang)
+        </td>
+        <td style="vertical-align:middle" class="center">
+            <button class="btn btn-success">@Html.ActionLink("Cập nhật", "Edit", new { id = item.MaTK_CTV }) </button>
+        </td>
+        
+    </tr>
+    }
+    </table>
+<button class="btn btn-primary">@Html.ActionLink("Tính", "Tinh", "DoanhThu") </button>
+
+         
+
+

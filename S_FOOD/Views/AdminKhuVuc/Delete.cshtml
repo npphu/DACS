@@ -1,0 +1,34 @@
+﻿@model S_FOOD.Models.KHUVUC
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3 class="center" style="color:red">Bạn có chắc muốn xóa khu vực @Model.TenKhuVuc?</h3>
+<div>
+    <h4 class="center">THÔNG TIN KHU VỰC</h4>
+    <hr />
+    <table class="table table-bordered table-striped table-hover" style="font-size:14px">
+        <tr class="center">
+            <th class="center">Mã khu vực</th>
+            <td class="center">@Model.ID_KhuVuc</td>
+        </tr>
+        <tr class="center">
+            <th class="center">Tên khu vực</th>
+            <td class="center">@Model.TenKhuVuc</td>
+        </tr>        
+    </table>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color center">
+            <input type="submit" value="Đồng ý xóa" class="btn btn-danger" />
+            <button class="btn btn-primary">@Html.ActionLink("Về trang chủ", "Index")</button>
+        </div>
+    }
+</div>
+
+
+

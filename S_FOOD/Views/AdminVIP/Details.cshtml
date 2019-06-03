@@ -1,0 +1,29 @@
+﻿@model S_FOOD.Models.VIP
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="center">
+    <h4>THÔNG TIN CHI TIẾT LEVEL QUẢNG CÁO <a style="color:red">@Model.LevelVip</a></h4>
+    <hr />
+    <table class="table table-bordered table-striped table-hover" style="font-size:14px">
+        <tr class="center">
+            <th class="center">Level</th>
+            <td class="center">@Model.LevelVip</td>
+        </tr>
+
+        <tr class="center">
+            <th class="center">Giá</th>
+            <td class="center">@Model.SoTienCanTra</td>
+        </tr>
+
+    </table>
+
+</div>
+<p class="center">
+    <button class="btn btn-success">@Html.ActionLink("Sửa", "Edit", new { id = Model.LevelVip })</button>
+    <button class="btn btn-primary"> @Html.ActionLink("Về trang chủ", "Index")</button>
+</p>
+

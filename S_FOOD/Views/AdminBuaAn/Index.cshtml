@@ -1,0 +1,35 @@
+﻿@model IEnumerable<S_FOOD.Models.LOAIBUAAN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    <button class="btn btn-warning">@Html.ActionLink("Thêm mới", "Create")</button>
+</p>
+<table class="table table-bordered table-hover table-striped" style="font-size:14px">
+    <thead style="background-color:orange">
+        <tr>
+            <th class="center">
+                Tên bữa ăn
+            </th>
+            <th class="center">Tùy chọn</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="center">
+                @Html.DisplayFor(modelItem => item.TenLoai)
+            </td>
+            <td class="center">
+                <button class="btn btn-success">@Html.ActionLink("Sửa", "Edit", new { id = item.ID_Loai }) </button>
+                <button class="btn btn-primary">@Html.ActionLink("Chi tiết", "Details", new { id = item.ID_Loai }) </button>
+                <button class="btn btn-danger">@Html.ActionLink("Xóa", "Delete", new { id = item.ID_Loai })</button>
+            </td>
+        </tr>
+    }
+
+</table>
+<h5 class="center">@ViewBag.ErrorBody </h5>

@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCTV.cshtml";
+}
+
+@model S_FOOD.Models.MONAN
+<div>
+    <h4 class="center">THÔNG TIN CHI TIẾT MÓN ĂN <a style="color:red">@Model.TenMonAn</a> </h4>
+
+    <table class="table table-bordered table-striped table-hover" style="font-size:14px">
+        <tr class="center" style="vertical-align:middle">
+            <th>Mã món ăn</th>
+            <td>@Model.ID_MonAn</td>
+        </tr>
+
+        <tr>
+            <th>Tên món ăn</th>
+            <td>@Model.TenMonAn</td>
+        </tr>
+
+        <tr>
+            <th style="vertical-align:middle">Ảnh</th>
+            <td><img src="@Url.Content("~/images/MonAn/" + Model.AnhBia)" style="width:120px" /></td>
+        </tr>
+
+        <tr>
+            <th>Giá bán</th>
+            <td>@Model.GiaBan</td>
+        </tr>
+
+        <tr>
+            <th>Phí vận chuyển</th>
+            <td>@Model.PhiVanChuyen</td>
+        </tr>
+
+        <tr>
+            <th>Giảm giá</th>
+            <td>@Model.KhuyenMai.GiamGia%</td>
+        </tr>
+
+        <tr>
+            <th>Số lượng tồn</th>
+            <td>@Model.SoLuong</td>
+        </tr>
+
+        <tr>
+            <th>Khu vực</th>
+            <td>@Model.KHUVUC.TenKhuVuc</td>
+        </tr>
+
+        <tr>
+            <th>Loại bữa ăn</th>
+            <td>@Model.LOAIBUAAN.TenLoai</td>
+        </tr>
+
+        <tr>
+            <th>Ngày cập nhật</th>
+            <td>@Model.NgayCapNhap</td>
+        </tr>
+
+        <tr>
+            <th>Người bán</th>
+            <td>@Model.CONGTACVIEN.HoTen</td>
+        </tr>
+
+    </table>
+    <table class="table table-bordered" style="font-size:14px">
+        <tr class="center">
+            <th>Mô tả</th>
+            <td>@Model.MoTa</td>
+        </tr>
+    </table>
+ 
+</div>
+<p class="center">
+    <button class="btn btn-success">@Html.ActionLink("Sửa", "Edit", new { id = Model.ID_MonAn })</button>
+    <button class="btn btn-primary">@Html.ActionLink("Về trang chủ", "Index")</button>
+</p>
+
+

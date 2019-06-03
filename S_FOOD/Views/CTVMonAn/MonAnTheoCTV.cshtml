@@ -1,0 +1,78 @@
+﻿
+
+@{
+    ViewBag.Title = "Món ăn";
+    Layout = "~/Views/Shared/_LayoutCTV.cshtml";
+}
+
+@model IEnumerable<S_FOOD.Models.MONAN>
+<p>
+    <button class="btn btn-warning">@Html.ActionLink("Thêm mới", "Create")</button>
+</p>
+<table class="table table-bordered table-hover table-striped" style="vertical-align:middle">
+    <thead style="background-color:orange">
+        <tr>
+            <th class="center">
+                Tên món ăn
+            </th>
+            <th class="center">
+                Ảnh
+            </th>
+            <th class="center">
+                Giá bán
+            </th>
+            <th class="center">
+                Ngày cập nhật
+            </th>
+            <th class="center">
+                Số lượng
+            </th>
+            <th class="center">
+                Khu vực
+            </th>
+            <th class="center">
+                Loại bữa ăn
+            </th>
+            <th class="center">Tùy chọn</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr class="center">
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.TenMonAn)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                <img src="@Url.Content("~/images/MonAn/" + item.AnhBia)" style="width:190px" />
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.GiaBan)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.NgayCapNhap)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.KHUVUC.TenKhuVuc)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.LOAIBUAAN.TenLoai)
+            </td>
+
+            <td style="vertical-align:middle" class="center">
+                <button class="btn btn-success">@Html.ActionLink("Sửa", "Edit", new { id = item.ID_MonAn }) </button>
+                <button class="btn btn-primary">@Html.ActionLink("Chi tiết", "Details", new { id = item.ID_MonAn }) </button>
+                <button class="btn btn-danger">@Html.ActionLink("Xóa", "Delete", new { id = item.ID_MonAn })</button>
+            </td>
+        </tr>
+    }
+
+</table>
+<h5 class="center text-error"> @ViewBag.ErrorBody</h5>
+<h5 class="center text-error"> @ViewBag.ErrorKM</h5>
+
+
+
+

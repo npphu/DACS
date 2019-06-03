@@ -1,0 +1,12 @@
+﻿@model IEnumerable<S_FOOD.Models.CONGTACVIEN>
+
+<div class="header-bottom">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <li>
+                <a href="@Url.Action("#", "#", new {id = item.MaTK_CTV})">@item.HoTen</a>
+            </li>
+        }
+    </div>
+</div>

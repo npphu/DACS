@@ -1,0 +1,11 @@
+﻿
+
+@if (ViewBag.Loi=true)
+{
+<table class="table table-hover">
+    <tr class="center">
+        <th class="center">@ViewBag.ErrorBody</th>
+        <td class="center"> <button class="btn btn-primary">@Html.ActionLink("OK", "Index", "AdminVIP")</button> </td>
+    </tr>
+</table>
+}

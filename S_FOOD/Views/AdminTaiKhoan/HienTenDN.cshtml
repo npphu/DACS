@@ -1,0 +1,12 @@
+﻿@model IEnumerable<S_FOOD.Models.Admin>
+
+<div class="header-bottom">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <li>
+                <a href="@Url.Action("#", "#", new {id = item.MaTK_Admin})">@item.TenTK_Admin</a>
+            </li>
+        }
+    </div>
+</div>

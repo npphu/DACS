@@ -1,0 +1,37 @@
+﻿@model S_FOOD.Models.KhuyenMai
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3 class="center" style="color:red">Bạn có chắc muốn xóa?</h3>
+<div>
+    <h4 class="center">THÔNG TIN KHUYẾN MẠI</h4>
+    <hr />
+    <table class="table table-bordered table-striped table-hover">
+        <tr class="center">
+            <th class="center">Mã khuyến mại</th>
+            <td class="center">@Model.ID_KhuyenMai</td>
+        </tr>
+        <tr class="center">
+            <th class="center">Món ăn</th>
+            <td class="center">@Model.MONAN.TenMonAn</td>
+        </tr>
+        <tr class="center">
+            <th class="center">Giá giảm</th>
+            <td class="center">@Model.GiamGia</td>
+        </tr>
+    </table>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color center">
+            <input type="submit" value="Đồng ý xóa" class="btn btn-danger" />
+            <button class="btn btn-primary">@Html.ActionLink("Về trang chủ", "Index")</button>
+        </div>
+    }
+</div>
+

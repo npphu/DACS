@@ -1,0 +1,43 @@
+﻿@model IEnumerable<S_FOOD.Models.DOANHTHU>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3 class="center">TOP 3 CỘNG TÁC VIÊN CÓ TỔNG DOANH THU CAO NHẤT</h3>
+<table class="table table-bordered table-hover table-striped" style="vertical-align:middle; font-size:14px">
+    <thead style="background-color:orange">
+        <tr>            
+            <th class="center">
+                Tên cộng tác viên
+            </th>
+            <th class="center">
+                Tổng doanh thu
+            </th>           
+            <th class="center">
+                Tiền chiếc khấu
+            </th>
+            <th class="center">
+                Tháng
+            </th>           
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr class="center">            
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.CONGTACVIEN.HoTen)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @String.Format("{0:0,00}", item.TongDoanhThu) VNĐ
+            </td>            
+            <td style="vertical-align:middle" class="center">
+                @String.Format("{0:0,00}", item.TienChiecKhau) VNĐ
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @String.Format("{0:MM/yyyy}", item.Thang)
+            </td>            
+        </tr>
+    }
+</table>

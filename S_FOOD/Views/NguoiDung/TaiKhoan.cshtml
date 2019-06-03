@@ -1,0 +1,26 @@
+﻿@model S_FOOD.Models.NGUOIDUNG
+
+@if (Session["TenTK_User"] == null)
+{
+
+    <li class="nav-item">
+        @(Html.ActionLink("Đăng nhập", "DangNhap", "NguoiDung", null, new { @class = "nav-link" }))
+    </li>
+    <li class="nav-item">
+        @(Html.ActionLink("Đăng ký", "DangKy", "NguoiDung", null, new { @class = "nav-link" }))
+    </li>
+
+}
+else
+{
+    <li>
+        <a> @Html.ActionLink("Thông tin TK", "ThongTinTK","NguoiDung", new { @class = "nav-link" })</a>
+    </li>
+    <li>
+        <a >Chào @Model.HoTen</a>
+    </li>
+    <li>
+        <a> @Html.ActionLink("Thoát", "DangXuat", null, new { @class = "nav-link" })</a>
+    </li>
+
+}

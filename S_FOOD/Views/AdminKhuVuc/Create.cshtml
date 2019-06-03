@@ -1,0 +1,37 @@
+﻿@model S_FOOD.Models.KHUVUC
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="main-content center">
+    <div class=" row">
+        <div class="span12">
+            <h4 class="title"><span class="text"><strong>THÔNG TIN</strong> KHU VỰC</span></h4>
+            <form action="#" method="post" class="form-stacked">
+                <fieldset>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Tên khu vực:</label>
+                        <div class="controls">
+                            <input type="text"name="TenKhuVuc" class="form-control form-control-static"  required autofocus>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="actions">
+                        <input tabindex="6" class="btn btn-warning" type="submit" value="Lưu">
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<div>
+    <button class="btn btn-primary">@Html.ActionLink("Về trang chủ", "Index")</button>
+</div>
+
+
+
+

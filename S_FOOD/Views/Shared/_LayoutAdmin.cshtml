@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Sfood - Admin | @ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+    <!-- bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrappage.css" rel="stylesheet" />
+    <!-- global styles -->
+    <link href="~/Content/flexslider.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+    <!-- scripts -->
+    <script src="~/Scripts/jquery-1.7.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/superfish.js"></script>
+    <script src="~/Scripts/jquery.scrolltotop.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="~/images/Admin/favicon-32x32.png">
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="wrapper" class="container">
+        <section class="navbar main-menu">
+            <div class="navbar-inner main-menu">
+                <a href="@Url.Action("Index","Admin")" class="logo pull-left"><img src="~/images/LogoBanner/logo-sfood.png" style="height:55px; width:193px" alt=""></a>
+                <nav id="menu" class="pull-right">
+                    <ul>
+                        <li><a href="@Url.Action("Index","Admin")">Trang chủ</a></li>
+                        <li> @Html.Action("TaiKhoan", "AdminTaiKhoan")</li>
+                    </ul>
+                   
+                </nav>
+            </div>
+        </section>
+        <br />
+         <br />
+
+        @RenderBody()
+        <section id="footer-bar">
+            <div class="row">
+
+            </div>
+        </section>
+        <section id="copyright">
+            <span> <p>&copy; @DateTime.Now.Year - Đồ án cơ sở - Nguyễn Phước Phú</p></span>
+        </section>
+    </div>
+    <script src="~/Scripts/common.js"></script>
+    <script src="~/Scripts/jquery.flexslider-min.js"></script>
+    <script type="text/javascript">
+                                        $(function () {
+                                            $(document).ready(function () {
+                                                $('.flexslider').flexslider({
+                                                    animation: "fade",
+                                                    slideshowSpeed: 4000000,
+                                                    animationSpeed: 60000,
+                                                    controlNav: false,
+                                                    directionNav: true,
+                                                    controlsContainer: ".flex-container" // the container that holds the flexslider
+                                                });
+                                            });
+                                        });
+    </script>
+</body>
+</html>

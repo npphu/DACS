@@ -1,0 +1,83 @@
+﻿@model S_FOOD.Models.CONGTACVIEN
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3 class="center">Bạn có chắc muốn xóa <a style="color:red">@Model.HoTen </a>?</h3>
+<div class="center">
+    <h4>THÔNG TIN CỘNG TÁC VIÊN</h4>
+    <hr />
+    <table class="table table-bordered table-striped table-hover" style="font-size:14px">
+        <tr>
+            <th>Tên tài khoản</th>
+            <td>@Model.TenTK_CTV</td>
+        </tr>
+
+        <tr>
+            <th>Mật khẩu</th>
+            <td>@Model.MatKhau_CTV</td>
+        </tr>
+
+        <tr>
+            <th>Họ tên</th>
+            <td>@Model.HoTen</td>
+        </tr>
+
+        <tr>
+            <th>CMND</th>
+            <td>@Model.CMND</td>
+        </tr>
+
+        <tr>
+            <th>Email</th>
+            <td>@Model.Email</td>
+        </tr>
+
+        <tr>
+            <th>Địa chỉ</th>
+            <td>@Model.DiaChi</td>
+        </tr>
+
+        <tr>
+            <th>Điện thoại</th>
+            <td>@Model.DienThoai</td>
+        </tr>
+
+        <tr>
+            <th>Ngày sinh</th>
+            <td>@Model.NgaySinh</td>
+        </tr>
+
+        <tr>
+            <th>Giới tính</th>
+            <td>@Model.GioiTinh</td>
+        </tr>
+
+        <tr>
+            <th>Level Quảng cáo</th>
+            <td>@Model.LevelVip</td>
+        </tr>
+
+        <tr>
+            <th>Tiền quảng cáo</th>
+            <td>@Model.VIP.SoTienCanTra</td>
+        </tr>
+
+        <tr>
+            <th>Ngày hết hạn quảng cáo</th>
+            <td>@Model.NgayHetHanVip</td>
+        </tr>
+
+    </table>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions center">
+            <input type="submit" value="Đồng ý xóa" class="btn btn-danger" />
+            <button class="btn btn-primary">@Html.ActionLink("Về trang chủ", "Index")</button>
+        </div>
+    }
+</div>

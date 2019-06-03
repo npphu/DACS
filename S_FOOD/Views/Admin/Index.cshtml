@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Trang chủ Admin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="main-content">
+    <div class="row">
+        <div class="span12">
+            <div class="row">
+                <div class="span12">
+                    <h4 class="title">
+                        <span class="pull-left"><span class="text"><span class="line">QUẢN <strong>LÝ</strong></span></span></span>
+                    </h4>
+                    <div id="myCarousel" class="myCarousel carousel slide">
+                        <div class="carousel-inner">
+                            <div class="active item">
+                                <ul class="thumbnails">
+                                    <li class="span3">
+                                        <div class="product-box">
+                                            <span class="sale_tag"></span>
+                                            <p><a href="@Url.Action("Index","AdminCTV")"><img src="~/images/Admin/icon-ctv.png" style="height:190px; width:400px" alt="" /></a></p>
+                                            <p style="font-size:16px; font-weight:bold"> <a href="@Url.Action("Index","AdminCTV")" class="price">Cộng tác viên </a></p>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="product-box">
+                                            <span class="sale_tag"></span>
+                                            <p><a href="@Url.Action("Index","AdminVIP")"><img src="~/images/Admin/icon-vip.png" style="height:190px; width:400px" alt="" /></a></p>
+                                            <p style="font-size:16px; font-weight:bold"> <a href="@Url.Action("Index","AdminVIP")" class="price">Quảng cáo</a></p>
+
+                                        </div>
+                                    </li>
+
+                                    <li class="span3">
+                                        <div class="product-box">
+                                            <span class="sale_tag"></span>
+                                            <p><a href="@Url.Action("Index","AdminKhuVuc")"><img src="~/images/Admin/icon-khuvuc.gif" style="height:190px; width:400px" alt="" /></a></p>
+                                            <p style="font-size:16px; font-weight:bold"> <a href="@Url.Action("Index","AdminKhuVuc")" class="price">Khu vực</a></p>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="product-box">
+                                            <span class="sale_tag"></span>
+                                            <p><a href="@Url.Action("Index","AdminBuaAn")"><img src="~/images/Admin/icon-loai.png" style="height:190px; width:400px" alt="" /></a></p>
+                                            <p style="font-size:16px; font-weight:bold"> <a href="@Url.Action("Index","AdminBuaAn")" class="price">Loại bữa ăn</a></p>
+
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="product-box">
+                                            <span class="sale_tag"></span>
+                                            <p><a href="@Url.Action("Index","AdminChiecKhau")"><img src="~/images/Admin/icon-chieckhau.png" style="height:190px; width:400px" alt="" /></a></p>
+                                            <p style="font-size:16px; font-weight:bold"><a href="@Url.Action("Index","AdminChiecKhau")" class="price">Chiếc khấu</a></p>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="product-box">
+                                            <span class="sale_tag"></span>
+                                            <p><a href="@Url.Action("Index","AdminCaiDat")"><img src="~/images/Admin/icon-caidat.png" style="height:190px; width:400px" alt="" /></a></p>
+                                            <p style="font-size:16px; font-weight:bold"><a href="@Url.Action("Index","AdminCaiDat")" class="price">Cài đặt</a></p>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="product-box">
+                                            <span class="sale_tag"></span>
+                                            <p><a href="@Url.Action("DoanhThuAll","DoanhThu")"><img src="~/images/Admin/icon-tien.png" style="height:190px; width:400px" alt="" /></a></p>
+                                            <p style="font-size:16px; font-weight:bold"><a href="@Url.Action("DoanhThuAll","DoanhThu")" class="price">Doanh thu</a></p>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="product-box">
+                                            <span class="sale_tag"></span>
+                                            <p><a href="@Url.Action("Index","AdminThongKe")"><img src="~/images/Admin/icon-thongke.png" style="height:190px; width:400px" alt="" /></a></p>
+                                            <p style="font-size:16px; font-weight:bold"> <a href="@Url.Action("Index","AdminThongKe")" class="price">Thống kê </a></p>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

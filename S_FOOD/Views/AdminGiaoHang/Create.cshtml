@@ -1,0 +1,41 @@
+﻿@model S_FOOD.Models.GIAOHANG
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="main-content center">
+    <div class=" row">
+        <div class="span12">
+            <h4 class="title"><span class="text"><strong>THÔNG TIN</strong> GIAO HÀNG</span></h4>
+            <form action="#" method="post" class="form-stacked">
+                <fieldset>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Hình thức:</label>
+                        <div class="controls">
+                            <input type="text" name="HinhThuc" class="form-control form-control-static"  required autofocus>
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Giá:</label>
+                        <div class="controls">
+                            <input type="number" min="0" name="Gia" class="form-control form-control-static"  required autofocus>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="actions">
+                        <input tabindex="6" class="btn btn-warning" type="submit" value="Lưu">
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<div>
+    <button class="btn btn-primary">@Html.ActionLink("Về trang chủ", "Index")</button>
+</div>
+

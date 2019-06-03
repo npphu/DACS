@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Món ăn theo loại";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@using S_FOOD.Models
+@using PagedList.Mvc;
+@model PagedList.IPagedList<MONAN>
+<section class="main-content">
+    <div class="row">
+        <div class="span12">
+            <div class="row">
+                <div class="span12">
+                    <h4 class="title">
+                        <span class="pull-left"><span class="text"><span class="line">MÓN ĂN THEO <strong>BỬA ĂN </strong></span></span></span>
+                    </h4>
+                    <div id="myCarousel" class="myCarousel carousel slide">
+                        <div class="carousel-inner">
+                            <div class="active item">
+                                <ul class="thumbnails">
+                                    @foreach (var item in Model)
+                                    {
+                                        <li class="span3">
+                                            <div class="product-box">
+                                                <span class="sale_tag"></span>
+                                                <p><a href="@Url.Action("ChiTiet","Sfood", new { id = item.ID_MonAn})"><img src="~/images/MonAn/@item.AnhBia" style="height:200px; width:370px" alt="" /></a></p>
+                                                <a class="title">Loại món ăn: @item.LOAIBUAAN.TenLoai</a><br />
+                                                <a class="category">Giá: @String.Format("{0:0,0}", @item.GiaBan) VNĐ</a>
+                                                <p style="font-size:14px; font-weight:bold"><a href="@Url.Action("ChiTiet","Sfood", new { id = item.ID_MonAn})" class="price">@item.TenMonAn</a></p>
+                                            </div>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+</section>
+@*Tao lk cac trang*@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        text-align: center;
+        display: inline;
+    }
+</style>

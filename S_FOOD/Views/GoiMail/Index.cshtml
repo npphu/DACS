@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="row">
+    @using (Html.BeginForm("Send", "Home", FormMethod.Post))
+    {
+        <input type="text" name="SendTo" placeholder="Send To" />
+        <input type="text" name="Subject" placeholder="Subject" />
+        <input type="text" name="Body" placeholder="Body" />
+        <input type="submit" value="Send" />
+    }
+</div>
+
+<div class="row">
+    @ViewBag.Error
+</div>
+

@@ -1,0 +1,17 @@
+﻿@using S_FOOD.Models
+@model IEnumerable<S_FOOD.Models.CHIECKHAU>
+
+<select name="ID_ChiecKhau" class="form-control form-control-static col-md-10" required>
+    @foreach (CHIECKHAU item in Model)
+    {
+        if (item.GiaTriCK == ViewBag.idLoai)
+        {
+            <option value="@item.GiaTriCK" selected>@item.GiaTriCK</option>
+        }
+        else
+        {
+            <option value="@item.GiaTriCK">@item.GiaTriCK</option>
+        }
+    }
+</select>
+

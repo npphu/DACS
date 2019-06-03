@@ -1,0 +1,16 @@
+﻿@using S_FOOD.Models
+@model List<KHUVUC>
+
+<select name="ID_KhuVuc" class="form-control form-control-static"  required>
+    @foreach (KHUVUC item in Model)
+    {
+        if (item.ID_KhuVuc == ViewBag.idLoai)
+        {
+            <option value="@item.ID_KhuVuc" selected>@item.TenKhuVuc</option>
+        }
+        else
+        {
+            <option value="@item.ID_KhuVuc">@item.TenKhuVuc</option>
+        }
+    }
+</select>

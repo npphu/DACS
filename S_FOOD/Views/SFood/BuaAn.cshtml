@@ -1,0 +1,13 @@
+﻿@model IEnumerable<S_FOOD.Models.LOAIBUAAN>
+
+<li>
+    <a href="#">Loại món ăn</a>
+    <ul>
+        @foreach (var item in Model)
+         {
+
+            <li><a href="@Url.Action("MonAnTheoBuaAn", "Sfood", new{id = item.ID_Loai})">@item.TenLoai</a></li>
+
+         }
+    </ul>
+</li>

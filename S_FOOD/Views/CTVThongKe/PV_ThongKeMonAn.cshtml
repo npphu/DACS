@@ -1,0 +1,27 @@
+﻿@model IEnumerable<S_FOOD.Models.V_Top5MonAn>
+<h4 class="center">TOP 5 MÓN ĂN BÁN CHẠY NHẤT</h4>
+<table class="table table-bordered table-hover table-striped" style="vertical-align:middle; font-size:14px">
+    <thead style="background-color:deepskyblue">
+        <tr>
+            <th class="center">
+                Tên món ăn
+            </th>
+            <th class="center">
+               Tổng số lượng đơn đặt hàng
+            </th>          
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr class="center">
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.TenMonAn)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.Số_lượng)
+            </td>           
+        </tr>
+    }
+
+</table>
+

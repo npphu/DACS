@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Sfood-@ViewBag.Title </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+    <!-- bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrappage.css" rel="stylesheet" />
+    <!-- global styles -->
+    <link href="~/Content/flexslider.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <!-- scripts -->
+    <script src="~/Scripts/jquery-1.7.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/superfish.js"></script>
+    <script src="~/Scripts/jquery.scrolltotop.js"></script>
+    <link rel="icon" type="image/png" sizes="40x40" href="~/images/Admin/favicon-32x32.png">
+
+
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    @*plugin facebook*@
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.0&appId=213159655944732&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    @*-------------------------*@
+    <div id="top-bar" class="container">
+        <div class="row">
+            <div class="span4">
+                @using (Html.BeginForm("KetQuaTimKiem", "TimKiem", FormMethod.Post, new { @class = "form-inline" }))
+                {
+                    <form method="POST" class="search_form">
+                        <input type="text" name="txtTimkiem" class="input-block-level search-query " Placeholder="Bạn tìm gì?..." />
+                    </form>
+                }
+            </div>
+            <div class="span8">
+                <div class="account pull-right">
+                    <ul class="user-menu">
+                        @Html.Action("GiohangPartial", "GioHang")
+                        @Html.Action("TaiKhoan", "NguoiDung")
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper" class="container">
+        @Html.Action("PV_Header", "AdminCaiDat")
+        <br />
+
+        @RenderBody()
+
+        <section id="footer-bar">
+            @*Zalo chat*@
+            <div class="zalo-chat-widget" data-oaid="3021233795120822301" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="350" data-height="420"></div>
+
+            <script src="https://sp.zalo.me/plugins/sdk.js"></script>
+            <div class="row">
+                <div class="span3">
+                    <h4>Liên kết</h4>
+                    <ul class="nav">
+                        <li><a href="@Url.Action("Index","Sfood")">Trang chủ</a></li>
+                        <li><a href="@Url.Action("About","Sfood")">About</a></li>                        
+                        <li><a href="@Url.Action("DangNhap","NguoiDung")">Đăng nhập</a></li>
+                    </ul>
+                </div>
+                <div class="span4">
+                    <h4>Tài khoản của tôi</h4>
+                    <ul class="nav">
+                        <li><a href="@Url.Action("ThongTinTK","NguoiDung")">Thông tin tài khoản</a></li>
+                        <li><a href="@Url.Action("LichSuMuaHang","GioHang")">Lịch sử mua hàng</a></li>
+                        <li><a href="@Url.Action("DangKy","NguoiDung")">Đăng ký</a></li>                     
+                    </ul>
+                </div>
+                <div class="span5">
+                    <p class="logo"><img src="~/images/LogoBanner/logo-sfood.png" class="site_logo" alt=""></p>
+                    <p>Địa chỉ: 475A, Điện Biên Phủ, P.25, Q.Bình Thạnh, Tp.HCM</p>
+                    <p>Email: npphu97@gmail.com</p>
+                    <p>Hotline: 01289584139</p>
+                    <br />
+                </div>
+            </div>
+        </section>
+        <section id="copyright">
+            <span> <p>&copy; @DateTime.Now.Year - Đồ án cơ sở - Nguyễn Phước Phú</p></span>
+        </section>
+    </div>
+    <script src="~/Scripts/common.js"></script>
+    <script src="~/Scripts/jquery.flexslider-min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(document).ready(function () {
+                $('.flexslider').flexslider({
+                    animation: "fade",
+                    slideshowSpeed: 4000,
+                    animationSpeed: 600,
+                    controlNav: false,
+                    directionNav: true,
+                    controlsContainer: ".flex-container" // the container that holds the flexslider
+                });
+            });
+        });
+    </script>
+    <script src="https://sp.zalo.me/plugins/sdk.js"></script>
+</body>
+</html>

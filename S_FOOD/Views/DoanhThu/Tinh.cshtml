@@ -1,0 +1,35 @@
+﻿@model S_FOOD.Models.DOANHTHU
+
+@{
+    ViewBag.Title = "Tinh";
+    Layout = "~/Views/Shared/_LayoutCTV.cshtml";
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4 class="center">TÍNH TỔNG DOANH THU THÁNG @DateTime.Now.Month/@DateTime.Now.Year</h4>
+        <hr />
+        <div class="center">
+            <label>Giá trị chiếc khấu</label>
+            @Html.Action("GiaTriCK", "DoanhThu")
+        </div>
+   
+        <div class="form-group center">
+                <div class="text-error">@ViewBag.MessageFail</div>
+                <div class="text-success">@ViewBag.MessageSuccess</div>
+            </div>
+        <hr />
+        <div class="form-group center">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Tính" class="btn btn-danger" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    <button class="btn btn-primary"> @Html.ActionLink("Trở về", "Index")</button> 
+</div>

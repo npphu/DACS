@@ -1,0 +1,38 @@
+﻿@model S_FOOD.Models.VIP
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-group center">
+        <h4>THÔNG TIN CHI TIẾT</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.LevelVip)
+
+        <div class="form-group">
+            <div class="control-group" style="margin-bottom:17px">
+                <label class="control-label">Giá quảng cáo:</label>
+                <div class="controls">
+                    <input type="number" min="0" name="GiaQuangCao" class="form-control form-control-static" style="width:500px" required autofocus>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="form-group center">
+            <div class="col-md-offset-2 col-md-10 center">
+                <input type="submit" value="Lưu" class="btn btn-warning" />
+                <button class="btn btn-primary"> @Html.ActionLink("Về trang chủ", "Index")</button>
+            </div>
+        </div>
+    
+}
+
+

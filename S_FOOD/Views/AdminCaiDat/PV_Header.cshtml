@@ -1,0 +1,31 @@
+﻿
+<section class="navbar main-menu">
+    <div class="navbar-inner main-menu">
+        <a href="@Url.Action("Index","Sfood")" class="logo pull-left"><img src="@ViewBag.UrlLogo " style="height:55px; width:193px" alt=""></a>
+        <nav id="menu" class="pull-right">
+            <ul>
+                <li><a href="@Url.Action("Index","Sfood")">Trang chủ</a></li>
+
+                @Html.Action("BuaAn", "Sfood")
+
+                @Html.Action("KhuVuc", "Sfood")
+
+            </ul>
+        </nav>
+    </div>
+</section>
+<section class="homepage-slider" id="home-slider">
+    <div class="flexslider">
+        <ul class="slides">
+            <li>
+                <img src="@ViewData["Url_hinh_banner_1"]" style=" height:255px" alt="" />
+            </li>
+            <li>
+                <img src="@ViewData["Url_hinh_banner_2"]" style=" height:255px"  alt=""  />
+            </li>
+            <li>
+                <img src="@ViewData["Url_hinh_banner_3"]" style="height:255px"  alt=""  />
+            </li>
+        </ul>
+    </div>
+</section>

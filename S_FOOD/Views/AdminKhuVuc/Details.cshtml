@@ -1,0 +1,30 @@
+﻿@model S_FOOD.Models.KHUVUC
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div>
+    <h4 class="center">THÔNG TIN CHI TIẾT KHU VỰC <a style="color:red">@Model.TenKhuVuc</a></h4>
+    <hr />
+    <table class="table table-bordered table-striped table-hover" style="font-size:14px">
+        <tr class="center">
+            <th class="center">Mã khu vực</th>
+            <td class="center">@Model.ID_KhuVuc</td>
+        </tr>
+
+        <tr class="center">
+            <th class="center">Tên khu vực</th>
+            <td class="center">@Model.TenKhuVuc</td>
+        </tr>
+
+    </table>
+
+</div>
+<p class="center">
+    <button class="btn btn-success">@Html.ActionLink("Sửa", "Edit", new { id = Model.ID_KhuVuc })</button>
+    <button class="btn btn-primary"> @Html.ActionLink("Về trang chủ", "Index")</button>
+</p>
+
+
+

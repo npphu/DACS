@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCTV.cshtml";
+}
+
+@model S_FOOD.Models.KhuyenMai
+
+<div>
+    <h4 class="center">THÔNG TIN CHI TIẾT KHUYẾN MẠI <a style="color:red">@Model.ID_MonAn</a></h4>
+    <hr />
+    <table class="table table-bordered table-striped table-hover" style="font-size:14px">        
+        <tr class="center">
+            <th class="center">Món ăn</th>
+            <td class="center">@Model.MONAN.TenMonAn</td>
+        </tr>
+
+        <tr class="center">
+            <th class="center">Giá gốc</th>
+            <td class="center">@Model.MONAN.GiaBan VNĐ</td>
+        </tr>
+
+        <tr class="center">
+            <th class="center">Giá giảm</th>
+            <td class="center">@Model.GiamGia VNĐ</td>
+        </tr>
+
+        <tr class="center">
+            <th class="center">Giá đã giảm</th>
+            <td class="center">@ViewBag.Gia VNĐ</td>
+        </tr>
+
+    </table>
+
+</div>
+<p class="center">
+    <button class="btn btn-success">@Html.ActionLink("Sửa", "Edit", new { id = Model.ID_MonAn })</button>
+    <button class="btn btn-primary"> @Html.ActionLink("Về trang chủ", "Index")</button>
+</p>
+
+

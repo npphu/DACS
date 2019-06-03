@@ -1,0 +1,16 @@
+﻿@using S_FOOD.Models
+@model IEnumerable<S_FOOD.Models.MONAN>
+
+<select name="IDMonAn" class="form-control form-control-static col-md-10"  required>
+    @foreach (MONAN item in Model)
+    {
+        if (item.ID_MonAn == ViewBag.idLoai)
+        {
+            <option value="@item.ID_MonAn" selected>@item.TenMonAn</option>
+        }
+        else
+        {
+            <option value="@item.ID_MonAn">@item.TenMonAn</option>
+        }
+    }
+</select>

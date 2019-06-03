@@ -1,0 +1,16 @@
+﻿@using S_FOOD.Models
+@model List<VIP>
+
+<select name="GiaQuangCao" class="form-control form-control-static"   required>
+    @foreach (VIP item in Model)
+    {
+        if (item.LevelVip == ViewBag.idLoai)
+        {
+            <option value="@item.LevelVip" selected>@item.SoTienCanTra</option>
+        }
+        else
+        {
+            <option value="@item.LevelVip">@item.SoTienCanTra</option>
+        }
+    }
+</select>

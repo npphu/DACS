@@ -1,0 +1,71 @@
+﻿@using S_FOOD.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="row justify-content-center ">
+    <div class="span12">
+        <div class="table-responsive">
+            <h4 class="title"><span class="text"><strong>THÔNG TIN</strong> GIỎ HÀNG</span></h4>
+            <table class="table table-bordered table-hover ">
+                <thead style="background-color:orange">
+                    <tr class="center" style="text-align:center; font-weight:bold; font-size:14px">
+
+                        <td style="vertical-align:middle" class="center"> Tên món ăn </td>
+                        <td style="vertical-align:middle" class="center"> Ảnh </td>
+                        <td style="vertical-align:middle" class="center"> Đơn giá </td>
+                        <td style="vertical-align:middle" class="center"> Giảm giá </td>
+                        <td style="vertical-align:middle" class="center"> Giá khuyến mại </td>
+                        <td style="vertical-align:middle" class="center"> Phí vận chuyển </td>
+                        <td style="vertical-align:middle" class="center"> Số lượng </td>
+                        <td style="vertical-align:middle" class="center"> Thành tiền </td>
+                        <td style="vertical-align:middle" class="center"> Tùy chọn</td>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                <tr class="center" style="text-align:center; font-size:13px">
+
+                    <td style="vertical-align:middle" class="center">@item.sTenMonAN</td>
+                    <td class="center"><img src="~/images/MonAn/@item.sAnh" width="160px" /></td>
+
+                    @using (Html.BeginForm("CapnhatGiohang", "GioHang", new { @iMaSP = item.iIDMonAn }))
+    {
+                <td style="vertical-align:middle" class="center">@String.Format("{0:0,0}", @item.dDonGia) VNĐ</td>
+                <td style="vertical-align:middle" class="center">@String.Format("{0:0,0}", @item.dGiaKhuyenMai)%</td>
+                <td style="vertical-align:middle" class="center">
+                    @((Convert.ToDecimal(Convert.ToDouble(item.dDonGia) - Convert.ToDouble(item.dDonGia) * (item.dGiaKhuyenMai / 100))).ToString("N0")) VNĐ
+
+                </td>
+                <td style="vertical-align:middle" class="center">@String.Format("{0:0,0}", @item.dPhiVanChuyen) VNĐ</td>
+                <td style="vertical-align:middle" class="center">
+                    <input class="form-control form-control-static" type="number" min="1" max="1000" name="txtSoluong" value="@item.iSoLuong" style="background-color:antiquewhite; width:70px" required />
+                </td>
+
+                <td style="vertical-align:middle" class="center">@String.Format("{0:0,0}", @item.dThanhTien) VNĐ</td>
+                <td style="vertical-align:middle" class="center">
+                    <a class="btn btn-primary" href="@Url.Action("ChiTiet","SFood", new { id = item.iIDMonAn})">Chi tiết</a>
+                    <input type="submit" class="btn btn-success" value="Cập nhật" />
+                    <button class="btn btn-warning center">@Html.ActionLink("Xóa", "XoaGioHang", new { @iMaSP = item.iIDMonAn })</button>
+                </td>
+
+}
+                </tr>
+                }
+                <tr style="text-align:center; font-weight:bold; color:red; font-size:14px">
+                    <td style="vertical-align:middle" colspan="8" class="center"> Tổng Số lượng món ăn: @ViewBag.Tongsoluong</td>
+                    <td style="vertical-align:middle" colspan="7" class="center"> Tổng tiền: @String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ </td>
+                </tr>
+            </table>
+        </div>
+        <div class="btn btn-danger center" style="flood-color:aqua" >
+            @Html.ActionLink("Hủy giỏ hàng", "XoaTatcaGiohang")
+        </div>
+        <div class="btn btn-success center" style="flood-color:aqua">
+            @Html.ActionLink("Đặt hàng", "Dathang", "GioHang")
+        </div>
+    </div>
+</div>
+

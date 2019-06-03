@@ -1,0 +1,149 @@
+﻿@*@model S_FOOD.Models.MONAN
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutCTV.cshtml";
+}
+@Html.AntiForgeryToken()
+<section class="main-content center">
+    <div class=" row">
+        <div class="span12">
+            <h4 class="title"><span class="text"><strong>THÔNG TIN</strong> MÓN ĂN </span></h4>
+            <form action="#" method="post" class="form-control">
+                <fieldset>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Tên món ăn:</label>
+                        <div class="controls">
+                            <input type="text" name="TenMonAn" class="form-control form-inline" style="width:500px" required autofocus>
+                        </div>
+                    </div>
+
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Mô tả:</label>
+                        <div class="controls">
+                            <textarea class="form-control" name="MoTa" rows="4" placeholder="Giới thiệu về món ăn" style="width:500px"></textarea>
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Giá bán:</label>
+                        <div class="controls">
+                            <input type="number" min="1000" name="GiaBan" class="form-control form-control-static" style="width:500px" required>
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Số lượng:</label>
+                        <div class="controls">
+                            <input type="number" min="1" name="SoLuong" class="form-control form-control-static" style="width:500px" required>
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Khu vực:</label>
+                        <div class="controls">
+                            @Html.Action("PV_KhuVuc", "CTVMonAn")
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Loại bữa ăn:</label>
+                        <div class="controls">
+                            @Html.Action("PV_LoaiBuaAn", "CTVMonAn")
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Ảnh:</label>
+                        <div class="controls">
+                            <input type="file" class="form-control-static" name="Anh" accept="image/*" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="text-error"> <h4>@ViewBag.MessageFail</h4> </div> <br />
+                        <div class="text-success"> <h4>@ViewBag.MessageSuccess</h4></div>
+                    </div>
+                    <hr />
+                    <div class="actions">
+                        <input tabindex="6" class="btn btn-warning" type="submit" value="Lưu">
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<div>
+    <button class="btn btn-primary">@Html.ActionLink("Về trang chủ", "Index")</button>
+</div>*@
+@model S_FOOD.Models.MONAN
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutCTV.cshtml";
+
+    ViewBag.Name = "món ăn";
+    ViewBag.ModelName = "MonAn";
+}
+@helper GetName(string name)
+    {
+        @String.Format("Ten{0}", name)
+}
+
+<h2 style="text-align:center">
+    Thêm @ViewBag.Name mới
+</h2>
+<hr />
+<div class="row center">
+    <div class="span12">
+        @using (Html.BeginForm("Create", "CTVMonAn", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <input type="text" name="TenMonAn" placeholder="Nhập tên @ViewBag.Name" required autofocus>
+            </div>
+            <br />
+            <div class="form-group">
+                <textarea class="form-control" name="GioiThieu" placeholder="Giới thiệu về món ăn" required></textarea>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="number" min="500" class="form-control" name="GiaBan" placeholder="Giá bán" required>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="number" min="0" class="form-control" name="PhiVanChuyen" placeholder="Phí vận chuyển" required>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="number" min="1" class="form-control" name="SoLuong" placeholder="Số lượng" required>
+            </div>
+            <br />
+            <div class="form-group">
+                <label style="font-size:14px">Loại bữa ăn:</label>
+                @Html.Action("PV_LoaiBuaAn", "CTVMonAn")
+            </div>
+            <br />
+            <div class="form-group">
+                <label style="font-size:14px">Khu vực:</label>
+                @Html.Action("PV_KhuVuc", "CTVMonAn")
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="file" class="form-control-file center" name="HinhAnh" accept="image/*" />
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="text-danger">@ViewBag.MessageFail</div>
+                <div class="text-success">@ViewBag.MessageSuccess</div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-success" />
+            </div>
+        </div>
+        }
+    </div>
+</div>
+<div>
+    <button class="btn btn-primary">@Html.ActionLink("Về trang chủ", "Index")</button>
+</div>
+

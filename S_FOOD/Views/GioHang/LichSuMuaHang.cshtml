@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Lịch sử mua hàng";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@using PagedList.Mvc;
+@model IEnumerable<S_FOOD.Models.DONHANG>
+    <h3 class="center">LỊCH SỬ MUA HÀNG</h3>
+<table class="table table-bordered table-hover table-striped" style="vertical-align:middle; font-size:14px">
+    <thead style="background-color:orange">
+        <tr>
+            <th class="center">
+                Mã đơn hàng
+            </th>
+            <th class="center">
+                Tên món ăn
+            </th>
+            <th class="center">
+                Giá bán
+            </th>
+            <th class="center">
+                Số lượng
+            </th>
+            <th class="center">
+                Ngày mua hàng
+            </th>
+            <th class="center">
+                Thành tiền
+            </th>
+
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+    <tr class="center">
+        <td style="vertical-align:middle" class="center">
+            @Html.DisplayFor(modelItem => item.ID_DatHang)
+        </td>
+        <td style="vertical-align:middle" class="center">
+            @Html.DisplayFor(modelItem => item.MONAN.TenMonAn)
+        </td>
+        <td style="vertical-align:middle" class="center">
+            @String.Format("{0:0,00}", item.MONAN.GiaBan)
+        </td>
+        <td style="vertical-align:middle" class="center">
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td style="vertical-align:middle" class="center">
+            @Html.DisplayFor(modelItem => item.DATHANG.ThoiGianDatHang)
+        </td>
+        <td style="vertical-align:middle" class="center">
+            @String.Format("{0:0,00}", item.SoLuong * item.MONAN.GiaBan)
+        </td>
+    </tr>
+    }
+
+</table>
+<hr />
+<button class="btn btn-primary"> @Html.ActionLink("Trở về", "Index","Sfood")</button>
+
+

@@ -1,0 +1,22 @@
+﻿@model S_FOOD.Models.CONGTACVIEN
+
+@if (Session["TenTK_CTV"] == null)
+{
+
+    <li class="nav-item">
+        @(Html.ActionLink("Đăng nhập", "DangNhap", "CTVTaiKhoan", null, new { @class = "nav-link" }))
+    </li>
+}
+else
+{
+    <li>
+        <a>CTV: @Model.HoTen</a>
+    </li>
+    <li>
+        @Html.ActionLink("Thoát", "DangXuat", null, new { @class = "nav-link" })
+    </li>
+    <li>
+        @Html.ActionLink("Thông tin TK", "ThongTinTK","CTVTaiKhoan", new { @class = "nav-link" })
+    </li>
+
+}

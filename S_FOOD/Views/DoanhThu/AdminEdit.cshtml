@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "AdminEdit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model S_FOOD.Models.DOANHTHU
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4 class="center">BẠN CHẮC CHẮN MUỐN CẬP NHẬT LẠI DOANH THU THÁNG @DateTime.Now.Month?</h4>
+    <hr />
+
+
+    @Html.HiddenFor(model => model.MaTK_CTV)
+
+    <div class="center">
+        <label>Giá trị chiếc khấu</label>
+        @Html.Action("GiaTriCK", "DoanhThu")
+    </div>
+    <hr />
+    <div class="form-group center">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Cập nhật" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    <button class="btn btn-primary">@Html.ActionLink("Trở về", "Index")</button> 
+</div>
+
+

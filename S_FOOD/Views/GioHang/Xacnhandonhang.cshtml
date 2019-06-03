@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Xác nhận đơn hàng";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="row justify-content-center">
+    <div class="span12">
+        <h4 class="title"><span class="text"><strong>XÁC NHẬN</strong> ĐƠN HÀNG</span></h4>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover ">
+                <thead style="background-color:navajowhite">
+                    <tr style="text-align:center; font-size:17px">
+                        <td class="center">
+                            Đặt hàng thành công! <br />
+                            Cảm ơn quý khách, đơn hàng của quý khách sẽ được giao ngay khi chúng tôi xác nhận qua điện thoại sau 5 phút.
+                            <br />
+                            VUI LÒNG KIỂM TRA EMAIL ĐỂ BIẾT THÊM CHI TIẾT.
+                            <br />
+                            Hân hạnh được phục vụ quý khách!
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+            <div>
+                <button class="btn btn-danger"> <a style="font-size:14px; float:right" href="@Url.Action("Index","SFood")">Tiếp tục mua hàng</a> </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "Kiểm tra đơn hàng";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@using S_FOOD.Models
+@model List<GioHang>
+<div class="row justify-content-center ">
+    <div class="span12">
+        <div class="table-responsive">
+            <h4 class="title"><span class="text"><strong>THÔNG TIN</strong> GIỎ HÀNG</span></h4>
+            <table class="table table-bordered table-hover ">
+                <thead style="background-color:orange">
+                    <tr class="center" style="text-align:center; font-weight:bold; font-size:14px">
+
+                        <td style="vertical-align:middle" class="center"> Tên món ăn </td>
+                        <td style="vertical-align:middle" class="center"> Ảnh </td>
+                        <td style="vertical-align:middle" class="center"> Đơn giá </td>
+                        <td style="vertical-align:middle" class="center"> Giảm giá </td>
+                        <td style="vertical-align:middle" class="center"> Giá khuyến mại </td>
+                        <td style="vertical-align:middle" class="center"> Phí vận chuyển </td>
+                        <td style="vertical-align:middle" class="center"> Số lượng </td>
+                        <td style="vertical-align:middle" class="center"> Thành tiền </td>
+              
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr class="center" style="text-align:center; font-size:13px">
+
+                        <td style="vertical-align:middle" class="center">@item.sTenMonAN</td>
+                        <td class="center"><img src="~/images/MonAn/@item.sAnh" width="160px" /></td>
+
+                        @using (Html.BeginForm("CapnhatGiohang", "GioHang", new { @iMaSP = item.iIDMonAn }))
+                        {
+                            <td style="vertical-align:middle" class="center">@String.Format("{0:0,0}", @item.dDonGia) VNĐ</td>
+                            <td style="vertical-align:middle" class="center">@String.Format("{0:0,0}", @item.dGiaKhuyenMai)%</td>
+                            <td style="vertical-align:middle" class="center">
+                                @((Convert.ToDecimal(Convert.ToDouble(item.dDonGia) - Convert.ToDouble(item.dDonGia) * (item.dGiaKhuyenMai / 100))).ToString("N0")) VNĐ
+
+                            </td>
+                            <td style="vertical-align:middle" class="center">@String.Format("{0:0,0}", @item.dPhiVanChuyen) VNĐ</td>
+                            <td style="vertical-align:middle" class="center">
+                                @item.iSoLuong
+                            </td>
+
+                            <td style="vertical-align:middle" class="center">@String.Format("{0:0,0}", @item.dThanhTien) VNĐ</td>                            
+
+                        }
+                    </tr>
+                }
+                <tr style="text-align:center; font-weight:bold; color:red; font-size:14px">
+                    <td style="vertical-align:middle" colspan="7" class="center"> Tổng Số lượng món ăn: @ViewBag.Tongsoluong</td>
+                    <td style="vertical-align:middle" colspan="6" class="center"> Tổng tiền: @String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <button class="btn btn-warning"> <a style="font-size:13px" href="@Url.Action("GioHang","GioHang")">Trở về Giỏ hàng </a> </button>
+        </div>
+    </div>
+</div>
+<hr />
+
+<div class=" row justify-content-center">
+    <div class="span12">
+        <h4 class="title"><span class="text"><strong>THÔNG TIN</strong> GIAO HÀNG</span></h4>
+        @{
+            NGUOIDUNG tk = (NGUOIDUNG)Session["TenTK_User"];
+        }
+        <table class="table table-bordered table-hover">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <thead style="background-color:cornflowerblue">
+                    <tr style="text-align:center; font-weight:bold; font-size:14px">
+                        <td style="vertical-align:middle" class="center">Người nhận</td>
+                        <td style="vertical-align:middle"  class="center">Điện thoại</td>
+                        <td style="vertical-align:middle"  class="center">Ngày đặt hàng</td>
+                        <td style="vertical-align:middle"  class="center">Ngày giao hàng</td>
+                        <td style="vertical-align:middle"  class="center">Địa chỉ giao hàng</td>                      
+                        <td style="vertical-align:middle"  class="center">Tổng tiền thanh toán</td>
+                    </tr>
+                </thead>
+                <tr style="text-align:center; font-size:14px">
+                    <td style="vertical-align:middle"  class="center">@tk.HoTen</td>
+                    <td style="vertical-align:middle"  class="center">@tk.DienThoai</td>
+                    <td style="vertical-align:middle"  class="center">@DateTime.Now.ToShortDateString()</td>
+                    <td style="vertical-align:middle"  class="center">Hàng sẽ được giao sau khi xác nhận</td>
+                    <td style="vertical-align:middle"  class="center">@tk.DiaChi</td>                   
+                    <td style="text-align:center; font-weight:bold; color:red; font-size:14px" class="center text-danger">@String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ</td>
+                </tr>       
+                <tfoot class="center">
+                    <tr class="center">
+                        <br />
+                        <td colspan="7" style="vertical-align:middle">
+                            <br />
+                            <input type="submit" style="font-size:14px; max-width: 300px !important" class="btn btn-danger btn-block center" value="Đồng ý đặt hàng (Thanh toán khi nhận hàng)" /> <br />
+                            @*Thanh toan Nganluong*@
+
+                            <a target="_blank" href="https://www.nganluong.vn/button_payment.php?receiver=npphu97@gmail.com&product_name=@ViewBag.IDDatHang&price=@ViewBag.Tongtien&return_url=@Url.Action("Xacnhandonhang","GioHang")&comments=(Ghi chú về đơn hàng)"><img src="https://www.nganluong.vn/css/newhome/img/button/buy-lg.png" border="0" /></a>
+
+                        </td>
+                    </tr>
+                </tfoot>
+            }
+        </table>
+    </div>
+</div>
+

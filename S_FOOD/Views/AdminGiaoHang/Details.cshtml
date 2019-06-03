@@ -1,0 +1,35 @@
+﻿@model S_FOOD.Models.GIAOHANG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div>
+    <h4 class="center">THÔNG TIN CHI TIẾT <a style="color:red">@Model.HinhThuc</a></h4>
+    <hr />
+    <table class="table table-bordered table-striped table-hover" style="font-size:14px">
+        <tr class="center">
+            <th class="center">Mã giao hàng</th>
+            <td class="center">@Model.ID_GiaoHang</td>
+        </tr>
+
+        <tr class="center">
+            <th class="center">Hình thức</th>
+            <td class="center">@Model.HinhThuc</td>
+        </tr>
+
+        <tr class="center">
+            <th class="center">Giá giao</th>
+            <td class="center">@Model.GiaGiao</td>
+        </tr>
+
+    </table>
+
+</div>
+<p class="center">
+    <button class="btn btn-success">@Html.ActionLink("Sửa", "Edit", new { id = Model.ID_GiaoHang })</button>
+    <button class="btn btn-primary"> @Html.ActionLink("Về trang chủ", "Index")</button>
+</p>
+
+

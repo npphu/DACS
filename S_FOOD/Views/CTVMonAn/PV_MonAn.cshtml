@@ -1,0 +1,15 @@
+﻿@model IEnumerable<S_FOOD.Models.MONAN>
+
+
+
+<div>
+    <span class="sale_tag"></span>
+    <p>
+        @foreach (var item in Model)
+         {
+            <a href="@Url.Action("MonAnTheoCTV","CTVMonAn", new {id = item.MaTK_CTV })"<img src="~/images/CTV-Icon/icon-monan.png" style="height:190px; width:400px" alt="" /></a>
+            <p style="font-size:16px; font-weight:bold"> <a href="@Url.Action("MonAnTheoCTV","CTVMonAn", new {id = item.MaTK_CTV })" class="price">Món ăn </a></p>
+         }
+        </p>
+</div>
+

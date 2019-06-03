@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Chi tiết món ăn";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@model IEnumerable<S_FOOD.Models.MONAN>
+<section class="header_text sub">
+    <h4><span>CHI TIẾT MÓN ĂN</span></h4>
+</section>
+<section class="main-content">
+    <div class="row">
+        <div class="span9">
+            @foreach (var item in Model)
+            {
+                <div class="row">
+                    <div class="span4">
+                        <a class="thumbnail" data-fancybox-group="group1" title="@item.TenMonAn"><img alt="" src="~/images/MonAn/@item.AnhBia"></a>
+                        <div class="fb-like" style="margin-top:5px" data-href="@Url.Content("http://sfood.somee.com/")" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                        
+                    </div>
+                    <div class="span5" style="font-size:15px">
+                        <address>
+                            <strong>Tên món ăn:</strong> <span style="font-size:15px">@item.TenMonAn</span><br>
+                            <strong>Khu vực:</strong> <span> @item.KHUVUC.TenKhuVuc</span><br>
+                            <strong>Loại bữa ăn:</strong> @item.LOAIBUAAN.TenLoai<span></span><br>
+                        </address>
+                        <hr />
+                        <h4 style="color:red; font-size:14px" class="thucdon-price"><strong>Giá: @String.Format("{0:0,0}", @item.GiaBan) VNĐ</strong></h4>
+                        @if (item.KhuyenMai != null)
+                        {
+                            <h4 style="color:red; font-size:14px"><strong>Giảm còn: @String.Format("{0:0,0}", item.GiaBan- item.GiaBan * Convert.ToDecimal(item.KhuyenMai.GiamGia) / 100) VNĐ</strong></h4>
+
+                        }
+                    </div>
+                    
+                    <div class="span3" style="font-size:15px">
+                        <form class="form-inline">
+                            <hr />
+                            <strong>Người bán:</strong> <span> @item.CONGTACVIEN.HoTen</span><br>
+                            <strong>Điện thoại:</strong> <span> @item.CONGTACVIEN.DienThoai</span><br>
+                            <strong>Email:</strong> <span> @item.CONGTACVIEN.Email</span><br>
+                            <strong>Địa chỉ:</strong> <span> @item.CONGTACVIEN.DiaChi</span><br>
+                            <hr />
+                            <button class="btn btn-warning"><a href="@Url.Action("ThemGiohang", "GioHang", new { iIDMonAn = item.ID_MonAn, strURL = Request.Url })">Thêm vào giỏ hàng </a></button>
+                            <button class="btn btn-success" type="submit">@Html.ActionLink("Về trang chủ", "Index", "Sfood")</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span9">
+                        <ul class="nav nav-tabs" id="myTab">
+                            <li class="active"><a href="#home" style="font-size:16px">Mô tả</a></li>                           
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="home"><label style="font-size:15px">@item.MoTa</label> </div>                          
+                        </div>
+                    </div>
+                </div>
+
+            <div class="span9">
+                <br>
+                <h4 class="title">
+                    <span class="pull-left"><span class="text"><strong>MỜI BẠN</strong> NHẬN XÉT</span></span>                    
+                </h4>
+                <div id="myCarousel-1" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="active item">
+                            <ul class="thumbnails listing-products">
+                                <li class="span3">
+                                    <div class="fb-comments" data-href="@Url.Content("http://sfood.somee.com/Sfood/ChiTiet/" + item.ID_MonAn)" data-width="830" data-numposts="5"></div>
+                                </li>                               
+                            </ul>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="span3 col">
+            <div class="block">
+                <h4 class="title">
+                    <span class="pull-left"><span class="text">Fanpage</span></span>
+                </h4>
+                <div id="myCarousel" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="active item">
+                            <ul class="thumbnails listing-products">
+                                <li class="span3">
+                                    <div class="fb-page" data-href="https://www.facebook.com/Sfood-2076042732671190/" data-tabs="tin nh&#x1eaf;n" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Sfood-2076042732671190/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Sfood-2076042732671190/">Sfood</a></blockquote></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <h4 class="title"><strong>TIN</strong> TỨC</h4>
+                <ul class="small-product">
+                    <li>
+                        <iframe style="width:250px; height:inherit" frameborder="0" class="rssdog" src="https://www.rssdog.com/index.php?url=http%3A%2F%2Fwww.doivi.net%2Frss%2Ftin%2Fmon-an-tot-cho-suc-khoe%2F&mode=html&showonly=&maxitems=5&showdescs=3&desctrim=0&descmax=3&tabwidth=100%10&linktarget=_blank&textsize=inherit&bordercol=%23d4d0c8&headbgcol=%23999999&headtxtcol=%23ffffff&titlebgcol=%23f1eded&titletxtcol=%23000000&itembgcol=%23ffffff&itemtxtcol=%23000000&ctl=0"></iframe>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <h4 class="title"><strong>VĂN PHÒNG</strong> SFOOD</h4>
+                <ul class="small-product">
+                    <li>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.123600824663!2d106.71265711449475!3d10.801844361678471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a459cb43ab%3A0x6c3d29d370b52a7e!2sHUTECH+University!5e0!3m2!1sen!2s!4v1522915287888" frameborder="1" style="border:medium; width:100%; height:auto"></iframe>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+

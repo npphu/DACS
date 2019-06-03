@@ -1,0 +1,12 @@
+﻿@model IEnumerable<S_FOOD.Models.NGUOIDUNG>
+
+<div class="header-bottom">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <li>
+                <a href="@Url.Action("#", "#", new {id=item.MaTK_User})">@item.HoTen</a> 
+            </li>
+        }
+    </div>
+</div>

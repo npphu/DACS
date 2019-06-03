@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "QuenMatKhau";
+    Layout = "~/Views/Shared/_LayoutCTV.cshtml";
+}
+
+<section class="center">
+    <div class="row">
+        <div class="span12">
+            <h4 class="title"><span class="text"><strong>QUÊN</strong> MẬT KHẨU</span></h4>
+            <form action="#" method="post" class="form-stacked">
+                <fieldset>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Nhập Email tài khoản:</label>
+                        <div class="controls">
+                            <input type="email" name="Email" class="form-control form-control-static" placeholder="Email tài khoản" style="max-width:100%" required>
+                            <h6 style="color:red; font-size:13px">
+                                <td>
+                                    @ViewData["Loi1"]
+                                </td>
+                            </h6>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="actions"><input tabindex="6" class="btn btn-warning" type="submit" value="OK" style="max-width:100%"></div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+
+

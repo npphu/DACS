@@ -1,0 +1,58 @@
+﻿@model S_FOOD.Models.CONGTACVIEN
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutCTV.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-group center">
+    <h4>ĐỔI MẬT KHẨU</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MaTK_CTV)
+
+    <div class="form-group">
+        @Html.Label("Tên tk", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TenTK_CTV, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenTK_CTV, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Mật khẩu mới</label>
+        <input type="password" class="form-control" name="MatKhauMoi" required autofocus/>
+    </div>
+
+    <div class="form-group">
+        <label>Nhập lại mật khẩu mới</label>
+        <input type="password" class="form-control" name="NhapLaiMatKhauMoi" required />
+    </div>
+
+    <div class="text-error">
+        @ViewBag.LoiMK
+    </div>
+
+    <div class="form-group">
+        <label>Mật khẩu củ</label>
+        <input type="password" class="form-control" name="MatKhauCu" required />
+    </div>
+
+    <div class="text-error">
+        @ViewBag.Loi
+    </div>
+
+</div>
+
+        <div class="form-group center">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lưu" class="btn btn-success" />
+            </div>
+        </div>
+         
+}
+

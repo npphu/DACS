@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCTV.cshtml";
+}
+
+@using PagedList.Mvc;
+@model IEnumerable<S_FOOD.Models.DONHANG>
+<h3 class="center">DANH SÁCH ĐƠN ĐẶT HÀNG</h3>
+<hr />
+<table class="table table-bordered table-hover table-striped" style="vertical-align:middle; font-size:14px">
+    <thead style="background-color:orange">
+        <tr>
+            <th class="center">
+                Tên món ăn
+            </th>
+            <th class="center">
+                Số lượng
+            </th>
+            <th class="center">
+                Người nhận
+            </th>
+            <th class="center">
+                Điện thoại
+            </th>
+            <th class="center">
+                Địa chỉ
+            </th>
+            <th class="center">
+                Ngày đặt hàng
+            </th>
+            <th class="center">
+                Thành tiền
+            </th>
+            <th class="center">Tùy chọn</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr class="center">
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.MONAN.TenMonAn)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.DATHANG.NGUOIDUNG.HoTen)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.DATHANG.NGUOIDUNG.DienThoai)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.DATHANG.NGUOIDUNG.DiaChi)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @Html.DisplayFor(modelItem => item.DATHANG.ThoiGianDatHang)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                @String.Format("{0:0,00}", item.SoLuong * item.MONAN.GiaBan)
+            </td>
+            <td style="vertical-align:middle" class="center">
+                <button class="btn btn-success">@Html.ActionLink("Sửa", "Edit", new { id = item.ID_DatHang }) </button>
+                <button class="btn btn-primary">@Html.ActionLink("Chi tiết", "Details", new { id = item.ID_DatHang }) </button>            
+            </td>
+        </tr>
+    }
+
+</table>
+

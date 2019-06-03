@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.125, 13" name="DBSfood">
+  <DataContextMoniker Name="/DBSfoodDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3b845775-6e9f-4058-941f-3ae39bae0b11" absoluteBounds="0.75, 8, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DBSfoodDataContext/Admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec573a91-768b-40be-8b9b-34c6112586bb" absoluteBounds="0.765, 8.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="38606e57-bd96-4577-b648-46f2ca3af735" absoluteBounds="0.75, 4.75, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/DBSfoodDataContext/VIP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c9a6c043-334d-47b2-95a6-a3585f0ec5fa" absoluteBounds="0.765, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="70522959-33b7-439b-9822-ecffda0523b2" absoluteBounds="0.75, 11, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBSfoodDataContext/CAIDAT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa9c1170-af6f-4965-b97d-6cd83b489ad1" absoluteBounds="0.765, 11.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2e107155-2187-459b-8aa3-3989746000a5" absoluteBounds="3.5, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DBSfoodDataContext/CHIECKHAU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d37a771e-abbe-4b71-9508-5a9c74ff2cf1" absoluteBounds="3.515, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="62d17715-ab13-40a9-bdcf-8f387055edfe" absoluteBounds="3.5, 3.75, 2, 3.309308268229167">
+      <DataClassMoniker Name="/DBSfoodDataContext/CONGTACVIEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43bf18f3-d17e-4b02-ba89-3ad5dc1a2889" absoluteBounds="3.515, 4.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="39026170-2c29-46c4-a741-722e41a6865e" absoluteBounds="9.25, 10.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DBSfoodDataContext/DATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bbc9badb-2439-4910-b1ea-2b01cdf6adbf" absoluteBounds="9.265, 10.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a8bff7cc-7871-4248-92ce-ca19e8cc9d07" absoluteBounds="12.75, 1, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/DBSfoodDataContext/DONHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dbdd3744-b559-4c0a-a338-41d61292a005" absoluteBounds="12.765, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ac7fd909-4637-4ad1-b38a-4940d03871e6" absoluteBounds="6.5, 1.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DBSfoodDataContext/KHUVUC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fb11394-928e-48cd-b964-0a25a5bfb8d1" absoluteBounds="6.515, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="90b3545f-3511-47a4-be32-2cfaaa643d11" absoluteBounds="12, 4.75, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/DBSfoodDataContext/KhuyenMai" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa8298d2-2f45-4c1d-8495-6b67e1c00bfb" absoluteBounds="12.015, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2a1b10a1-a7ed-4638-9d5c-b351cc8b8326" absoluteBounds="6.5, 7.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DBSfoodDataContext/LOAIBUAAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="27004923-87c4-49d8-b61d-b3c621dfbe46" absoluteBounds="6.515, 8.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cdfe5058-67b6-4b5e-bc66-1d82388022f4" absoluteBounds="9.25, 3.875, 2, 2.9247054036458322">
+      <DataClassMoniker Name="/DBSfoodDataContext/MONAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51da2b91-87a1-4d6e-84d1-1919a1147cf8" absoluteBounds="9.265, 4.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2732a6b-d8e7-49b5-ad90-a4c705eefe74" absoluteBounds="6.5, 10.25, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/DBSfoodDataContext/NGUOIDUNG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a02f129b-3cc2-41d4-b383-739b598983bc" absoluteBounds="6.515, 10.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 5.34699625651042); (3.5 : 5.34699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBSfoodDataContext/VIP/VIP_CONGTACVIEN" />
+      <nodes>
+        <classShapeMoniker Id="38606e57-bd96-4577-b648-46f2ca3af735" />
+        <classShapeMoniker Id="62d17715-ab13-40a9-bdcf-8f387055edfe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 10.5); (11.625 : 10.125); (11.625 : 2.7612939453125); (12.375 : 2.7612939453125); (12.75 : 2.3862939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBSfoodDataContext/DATHANG/DATHANG_DONHANG" />
+      <nodes>
+        <classShapeMoniker Id="39026170-2c29-46c4-a741-722e41a6865e" />
+        <classShapeMoniker Id="a8bff7cc-7871-4248-92ce-ca19e8cc9d07" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 4.28125); (14.2031225 : 4.28125); (14.2031225 : 2.3862939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBSfoodDataContext/MONAN/MONAN_DONHANG" />
+      <nodes>
+        <classShapeMoniker Id="cdfe5058-67b6-4b5e-bc66-1d82388022f4" />
+        <classShapeMoniker Id="a8bff7cc-7871-4248-92ce-ca19e8cc9d07" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 5.34699625651042); (11.5416666666667 : 5.34699625651042 : JumpStart); (11.7083333333333 : 5.34699625651042 : JumpEnd); (12 : 5.34699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBSfoodDataContext/MONAN/MONAN_KhuyenMai" />
+      <nodes>
+        <classShapeMoniker Id="cdfe5058-67b6-4b5e-bc66-1d82388022f4" />
+        <classShapeMoniker Id="90b3545f-3511-47a4-be32-2cfaaa643d11" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.33735270182292); (9.25 : 5.33735270182292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBSfoodDataContext/CONGTACVIEN/CONGTACVIEN_MONAN" />
+      <nodes>
+        <classShapeMoniker Id="62d17715-ab13-40a9-bdcf-8f387055edfe" />
+        <classShapeMoniker Id="cdfe5058-67b6-4b5e-bc66-1d82388022f4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.5 : 2.94399251302083); (7.5 : 4.57492385091146); (9.25 : 4.57492385091146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBSfoodDataContext/KHUVUC/KHUVUC_MONAN" />
+      <nodes>
+        <classShapeMoniker Id="ac7fd909-4637-4ad1-b38a-4940d03871e6" />
+        <classShapeMoniker Id="cdfe5058-67b6-4b5e-bc66-1d82388022f4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8 : 7.75); (8 : 6.09978155273437); (9.25 : 6.09978155273437)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBSfoodDataContext/LOAIBUAAN/LOAIBUAAN_MONAN" />
+      <nodes>
+        <classShapeMoniker Id="2a1b10a1-a7ed-4638-9d5c-b351cc8b8326" />
+        <classShapeMoniker Id="cdfe5058-67b6-4b5e-bc66-1d82388022f4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 11.5777498372396); (9.25 : 11.5777498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBSfoodDataContext/NGUOIDUNG/NGUOIDUNG_DATHANG" />
+      <nodes>
+        <classShapeMoniker Id="f2732a6b-d8e7-49b5-ad90-a4c705eefe74" />
+        <classShapeMoniker Id="39026170-2c29-46c4-a741-722e41a6865e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="170f403f-aa96-4e03-92fa-4332d864ddd9" absoluteBounds="7.625, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DBSfoodDataContext/V_Top5MonAn" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9323b0d4-c7ec-4db4-b608-a2f28e69d4cb" absoluteBounds="7.6400000000000006, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9fbc18a1-d5a1-4102-8dc3-aa82cd07266e" absoluteBounds="10.25, 0.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBSfoodDataContext/V_Top5KhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7c5377e2-20d5-4bbe-9e88-cb5708f788aa" absoluteBounds="10.265, 1.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee1a622e-5bbf-4186-8da8-22ae295a229f" absoluteBounds="13.875, 7.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBSfoodDataContext/DOANHTHU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03fbb89c-008a-4e2a-93e5-ac89b0aa7489" absoluteBounds="13.89, 8.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 6.9607568359375); (7.91666666666667 : 6.9607568359375 : JumpStart); (8.08333333333333 : 6.9607568359375 : JumpEnd); (11.5416666666667 : 6.9607568359375 : JumpStart); (11.7083333333333 : 6.9607568359375 : JumpEnd); (15.03906125 : 6.9607568359375); (15.03906125 : 7.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBSfoodDataContext/CONGTACVIEN/CONGTACVIEN_DOANHTHU" />
+      <nodes>
+        <classShapeMoniker Id="62d17715-ab13-40a9-bdcf-8f387055edfe" />
+        <classShapeMoniker Id="ee1a622e-5bbf-4186-8da8-22ae295a229f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

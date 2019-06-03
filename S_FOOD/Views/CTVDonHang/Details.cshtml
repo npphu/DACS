@@ -1,0 +1,77 @@
+﻿@model S_FOOD.Models.DONHANG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCTV.cshtml";
+}
+
+<div>
+    <h3 class="center">CHI TIẾT ĐƠN HÀNG [@Model.ID_DatHang]</h3>
+    <hr />
+    <table class="table table-bordered table-striped table-hover" style="font-size:14px">
+        <tr class="center" style="vertical-align:middle">
+            <th>Mã đơn hàng</th>
+            <td>@Model.ID_DatHang</td>
+        </tr>
+
+        <tr>
+            <th>Tên món ăn</th>
+            <td>@Model.MONAN.TenMonAn</td>
+        </tr>
+
+        <tr>
+            <th>Số lượng</th>
+            <td>@Model.SoLuong</td>
+        </tr>
+
+        <tr>
+            <th>Giá bán</th>
+            <td>@Model.MONAN.GiaBan</td>
+        </tr>
+        
+
+        <tr>
+            <th>Người nhận</th>
+            <td>@Model.DATHANG.NGUOIDUNG.HoTen</td>
+        </tr>
+
+        <tr>
+            <th>Điện thoại</th>
+            <td>@Model.DATHANG.NGUOIDUNG.DienThoai</td>
+        </tr>
+
+        <tr>
+            <th>Email</th>
+            <td>@Model.DATHANG.NGUOIDUNG.Email</td>
+        </tr>
+
+        <tr>
+            <th>Thời gian đặt hàng</th>
+            <td>@Model.DATHANG.ThoiGianDatHang</td>
+        </tr>
+
+        <tr>
+            <th>Địa chỉ</th>
+            <td>@Model.DATHANG.DiaChiGiaoHang</td>
+        </tr>
+
+        <tr>
+            <th>Tình trang giao hàng</th>
+            <td>@Model.DATHANG.TinhTrangGiao</td>
+        </tr>
+
+        <tr>
+            <th>Đã thanh toán</th>
+            <td>@Model.DATHANG.DaThanhToan</td>
+        </tr>
+
+        <tr>
+            <th>Thành tiền</th>
+            <td> @String.Format("{0:0,00}", Model.SoLuong * Model.MONAN.GiaBan)</td>
+        </tr>
+    </table>
+</div>
+<p class="center">
+    <button class="btn btn-success">@Html.ActionLink("Edit", "Edit", new { id = Model.ID_DatHang })</button>
+    <button class="btn btn-primary"> @Html.ActionLink("Back to List", "Index")</button>
+</p>

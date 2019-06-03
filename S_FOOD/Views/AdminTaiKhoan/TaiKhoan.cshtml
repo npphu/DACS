@@ -1,0 +1,20 @@
+﻿@model S_FOOD.Models.Admin
+
+@if (Session["TenTK_Admin"] == null)
+{
+
+    <li class="nav-item">
+        @(Html.ActionLink("Đăng nhập", "DangNhap", "AdminTaiKhoan", null, new { @class = "nav-link" }))
+    </li>
+    <li class="nav-item">
+        @(Html.ActionLink("Đăng ký", "DangKy", "AdminTaiKhoan", null, new { @class = "nav-link" }))
+    </li>
+
+}
+else
+{
+    <li>
+        <a>Chào @Model.TenTK_Admin</a>
+    </li>
+    
+}

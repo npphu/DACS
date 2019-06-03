@@ -1,0 +1,106 @@
+﻿@model S_FOOD.Models.CONGTACVIEN
+
+@{
+    ViewBag.Title = "Thêm Cộng tác viên";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script src="~/Scripts/jquery.scrolltotop.js"></script>
+<section class="main-content center">
+    <div class=" row">
+        <div class="span12">
+            <h4 class="title"><span class="text"><strong>THÔNG TIN</strong> CỘNG TÁC VIÊN </span></h4>
+            <form action="#" method="post" class="form-stacked">
+                <fieldset>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Tên tài khoản:</label>
+                        <div class="controls">
+                            <input type="text" name="TenDangNhap" class="form-control form-control-static"  required autofocus>
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Mật khẩu:</label>
+                        <div class="controls">
+                            <input type="password" name="MatKhau" class="form-control form-control-static"  required>
+
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Nhập lại mật khẩu:</label>
+                        <div class="controls">
+                            <input type="password" name="NhapLaiMatKhau" class="form-control form-control-static"  required>                            
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Họ tên:</label>
+                        <div class="controls">
+                            <input type="text" name="HoTen" class="form-control form-control-static"  required>
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">CMND:</label>
+                        <div class="controls">
+                            <input type="text" name="CMND" class="form-control form-control-static" required>
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Email:</label>
+                        <div class="controls">
+                            <input type="email" name="Email" class="form-control form-control-static" required>
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Địa chỉ:</label>
+                        <div class="controls">
+                            <input type="text" name="DiaChi" class="form-control form-control-static"  required>
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Điện thoại:</label>
+                        <div class="controls">
+                            <input type="number" name="DienThoai" class="form-control form-control-static"  required>
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Ngày sinh:</label>
+                        <div class="controls">
+                            <input type="date" name="NgaySinh" class="form-control form-control-static"  required>                            
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Giới tính:</label>
+                        <select name="GioiTinh" class="form-control form-control-static"  required>
+                            <option value="0">Nam</option>
+                            <option value="1">Nữ</option>
+                        </select>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Giá quảng cáo:</label>                        
+                        <div class="controls">
+                            @Html.Action("PV_Dropdown_TienVip", "AdminCTV")
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Ngày hết hạn VIP:</label>
+                        <div class="controls">
+                            <input type="date" name="NgayHetHan" class="form-control form-control-static" required>
+                        </div>
+                    </div>        
+                    <div class="form-group">
+                        <div class="text-error"> <h4>@ViewBag.MessageFail</h4> </div> <br />
+                        <div class="text-success"> <h4>@ViewBag.MessageSuccess</h4></div>
+                    </div>
+                    <hr />
+                    <div class="actions">
+                        <input tabindex="6" class="btn btn-warning" type="submit" value="Lưu">
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<div>
+    <button class="btn btn-primary">@Html.ActionLink("Về trang chủ", "Index")</button>
+</div>

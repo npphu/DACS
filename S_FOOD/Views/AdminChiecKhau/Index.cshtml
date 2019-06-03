@@ -1,0 +1,33 @@
+﻿@model IEnumerable<S_FOOD.Models.CHIECKHAU>
+
+@{
+    ViewBag.Title = "Chiếc khấu";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    <button class="btn btn-warning">@Html.ActionLink("Thêm mới", "Create")</button>
+</p>
+<table class="table table-bordered table-hover table-striped" style="font-size:14px">
+    <thead style="background-color:orange">
+        <tr>
+            <th class="center">
+                Giá trị chiếc khấu
+            </th>
+            <th class="center">Tùy chọn</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="center">
+                @Html.DisplayFor(modelItem => item.GiaTriCK)
+            </td>
+            <td class="center">
+                <button class="btn btn-success">@Html.ActionLink("Sửa", "Edit", new { id = item.ID_ChiecKhau }) </button>
+            </td>
+        </tr>
+    }
+
+</table>
+<h5 class="center">@ViewBag.ErrorBody </h5>

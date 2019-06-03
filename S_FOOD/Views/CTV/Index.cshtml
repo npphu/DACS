@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Trang chủ Cộng tác viên";
+    Layout = "~/Views/Shared/_LayoutCTV.cshtml";
+}
+@model IEnumerable<S_FOOD.Models.MONAN>
+<section class="main-content">
+    <div class="row">
+        <div class="span12">
+            <div class="row">
+                <div class="span12">
+                    <h4 class="title">
+                        <span class="pull-left"><span class="text"><span class="line">QUẢN <strong>LÝ</strong></span></span></span>
+                    </h4>
+                    <div id="myCarousel" class="myCarousel carousel slide">
+                        <div class="carousel-inner">
+                            <div class="active item">
+                                <ul class="thumbnails">
+                                    <li class="span3">
+                                        <div class="product-box">
+                                            <span class="sale_tag"></span>
+                                            <p><a href="@Url.Action("Index","CTVMonAn")"><img src="~/images/CTV-Icon/icon-monan.png" style="height:190px; width:400px" alt="" /></a></p>
+                                            <p style="font-size:16px; font-weight:bold"> <a href="@Url.Action("Index","CTVMonAn")" class="price">Món ăn </a></p>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="product-box">
+                                            <span class="sale_tag"></span>
+                                            <p><a href="@Url.Action("Index","CTVKhuyenMai")"><img src="~/images/Admin/icon-khuyenmai.png" style="height:190px; width:400px" alt="" /></a></p>
+                                            <p style="font-size:16px; font-weight:bold"> <a href="@Url.Action("Index","CTVKhuyenMai")" class="price">Khuyến mại</a></p>
+
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="product-box">
+                                            <span class="sale_tag"></span>
+                                            <p><a href="@Url.Action("Index","CTVDonHang")"><img src="~/images/CTV-Icon/icon-donhang.png" style="height:190px; width:400px" alt="" /></a></p>
+                                            <p style="font-size:16px; font-weight:bold"> <a href="@Url.Action("Index","CTVDonHang")" class="price">Đơn hàng </a></p>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="product-box">
+                                            <span class="sale_tag"></span>
+                                            <p><a href="@Url.Action("Index","DoanhThu")"><img src="~/images/CTV-Icon/icon-tien.png" style="height:190px; width:400px" alt="" /></a></p>
+                                            <p style="font-size:16px; font-weight:bold"> <a href="@Url.Action("Index","DoanhThu")" class="price">Doanh thu </a></p>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="product-box">
+                                            <span class="sale_tag"></span>
+                                            <p><a href="@Url.Action("Index","CTVThongKe")"><img src="~/images/CTV-Icon/icon-thongke.png" style="height:190px; width:400px" alt="" /></a></p>
+                                            <p style="font-size:16px; font-weight:bold"> <a href="@Url.Action("Index","CTVThongKe")" class="price">Thống kê </a></p>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
